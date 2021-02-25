@@ -1,3 +1,4 @@
+import {Request, Response } from 'express';
 import { getCustomRepository } from "typeorm";
 import { SurveysRepository } from "../repositories/SurveysRepository";
 
@@ -16,7 +17,6 @@ class SurveysController {
         await surveysRepository.save(survey);
 
         return response.status(201).json(survey);
-
     }
 
     async show(request: Request, response: Response) {
